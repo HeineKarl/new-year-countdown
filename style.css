@@ -1,0 +1,521 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(125deg, #1e0230, #090c44, #2c2f69);
+  font-family: "Poppins";
+  overflow: hidden;
+}
+
+.new-year {
+  font-size: 10rem;
+  font-family: "Poppins";
+  color: rgba(0, 0, 0, 0);
+}
+
+.countdown {
+  height: 100%;
+  width: 80%;
+  position: absolute;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.countdown > div {
+  color: white;
+  font-size: 6rem;
+}
+.day::after {
+  content: "Days";
+  position: absolute;
+  top: 60%;
+  left: 8.5%;
+  font-size: 0.3em;
+}
+.hour::after {
+  content: "Hours";
+  position: absolute;
+  top: 60%;
+  left: 33.5%;
+  font-size: 0.3em;
+}
+.minute::after {
+  content: "Minutes";
+  position: absolute;
+  top: 60%;
+  left: 57.5%;
+  font-size: 0.3em;
+}
+.second::after {
+  content: "Seconds";
+  position: absolute;
+  top: 60%;
+  left: 82.5%;
+  font-size: 0.3em;
+}
+
+.firework {
+  position: absolute;
+  z-index: 1000;
+}
+.explosion {
+  position: absolute;
+  left: -2px;
+  bottom: 0;
+  width: 4px;
+  height: 80px;
+  transform-origin: 50% 100%;
+  /* background-color: rgba(0,0,0,.2); */
+  overflow: hidden;
+}
+.explosion:nth-child(1) {
+  transform: rotate(0deg) translateY(-15px);
+}
+.explosion:nth-child(2) {
+  transform: rotate(30deg) translateY(-15px);
+}
+.explosion:nth-child(3) {
+  transform: rotate(60deg) translateY(-15px);
+}
+.explosion:nth-child(4) {
+  transform: rotate(90deg) translateY(-15px);
+}
+.explosion:nth-child(5) {
+  transform: rotate(120deg) translateY(-15px);
+}
+.explosion:nth-child(6) {
+  transform: rotate(150deg) translateY(-15px);
+}
+.explosion:nth-child(7) {
+  transform: rotate(180deg) translateY(-15px);
+}
+.explosion:nth-child(8) {
+  transform: rotate(210deg) translateY(-15px);
+}
+.explosion:nth-child(9) {
+  transform: rotate(240deg) translateY(-15px);
+}
+.explosion:nth-child(10) {
+  transform: rotate(270deg) translateY(-15px);
+}
+.explosion:nth-child(11) {
+  transform: rotate(300deg) translateY(-15px);
+}
+.explosion:nth-child(12) {
+  transform: rotate(330deg) translateY(-15px);
+}
+
+.explosion::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 40px;
+  background-color: #f5cf52;
+}
+@keyframes explosion {
+  0% {
+    top: 100%;
+  }
+  33%,
+  100% {
+    top: -50%;
+  }
+}
+
+#firework1 {
+  left: 50%;
+  top: 30%;
+  transform: scale(1);
+}
+#firework1 .explosion::before {
+  animation: explosion 2s 0.6s ease-in-out infinite;
+}
+
+#firework2 {
+  left: 50%;
+  top: 30%;
+  transform: scale(1.5);
+}
+#firework2 .explosion::before {
+  animation: explosion 2s 0.4s ease-in-out infinite;
+}
+
+#firework3 {
+  left: 30%;
+  top: 65%;
+  transform: scale(0.4);
+}
+#firework3 .explosion::before {
+  animation: explosion 2s 1s ease-in-out infinite;
+}
+#firework4 {
+  left: 30%;
+  top: 65%;
+  transform: scale(0.8);
+}
+#firework4 .explosion::before {
+  animation: explosion 2s 0.8s ease-in-out infinite;
+}
+#firework5 {
+  left: 80%;
+  top: 60%;
+  transform: scale(0.3);
+}
+#firework5 .explosion::before {
+  animation: explosion 2s 1.2s ease-in-out infinite;
+}
+#firework6 {
+  left: 80%;
+  top: 60%;
+  transform: scale(0.6);
+}
+#firework6 .explosion::before {
+  animation: explosion 2s 1s ease-in-out infinite;
+}
+#firework7 {
+  left: 70%;
+  top: 40%;
+  transform: scale(0.6);
+}
+#firework7 .explosion::before {
+  animation: explosion 2s 2.2s ease-in-out infinite;
+}
+#firework8 {
+  left: 70%;
+  top: 40%;
+  transform: scale(1.2);
+}
+#firework8 .explosion::before {
+  animation: explosion 2s 2s ease-in-out infinite;
+}
+#firework9 {
+  left: 20%;
+  top: 30%;
+  transform: scale(0.5);
+}
+#firework9 .explosion::before {
+  animation: explosion 2s 1.8s ease-in-out infinite;
+}
+#firework10 {
+  left: 20%;
+  top: 30%;
+  transform: scale(1);
+}
+#firework10 .explosion::before {
+  animation: explosion 2s 1.6s ease-in-out infinite;
+}
+
+span {
+  opacity: 0;
+  transition: all 0.8s ease;
+  display: inline-block;
+  transform: translateY(-20%);
+}
+
+span.fade {
+  opacity: 1;
+  transform: translateY(0%);
+  animation: colorchange 2s ease infinite;
+}
+
+@keyframes colorchange {
+  0% {
+    color: #23eb76;
+  }
+  30% {
+    color: #23eb76e5;
+  }
+  100% {
+    color: #23eb76;
+  }
+}
+
+.star-container {
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: rotateZ(25deg);
+  clip-path: circle(50% at 50% 50%);
+}
+.star-container-two {
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  top: 5%;
+  left: 0%;
+  transform: rotateZ(25deg);
+  clip-path: circle(50% at 50% 50%);
+}
+.star {
+  background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 6px #699bff);
+  animation: tail 2s ease-in-out infinite, falling 2s ease-in-out infinite;
+}
+
+.star::before,
+.star::after {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 255, 0),
+    #699bff,
+    #e4e7ee,
+    #699bff,
+    rgba(71, 71, 228, 0)
+  );
+  content: "";
+  height: 2px;
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0%;
+  border-radius: 100%;
+  transform: translateX(50%) rotateZ(65deg);
+  animation: shining 2s ease-in-out infinite;
+}
+.star::after {
+  transform: translateX(50%) rotateZ(-25deg);
+}
+
+/* // Animations */
+@keyframes tail {
+  0% {
+    width: 0px;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+
+@keyframes falling {
+  0% {
+    transform: translateX(0px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(350px);
+    opacity: 1;
+  }
+}
+
+@keyframes shining {
+  0% {
+    width: 0px;
+  }
+  50% {
+    width: 25px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+.star:nth-child(1) {
+  top: calc(50% - 300px);
+  left: calc(50% - 300px);
+  animation-delay: 600ms;
+}
+.star:nth-child(1)::before,
+.star:nth-child(1)::after {
+  animation-delay: 600ms;
+}
+.star:nth-child(2) {
+  top: calc(50% - 175px);
+  left: calc(50% - 190px);
+  animation-delay: 150ms;
+}
+.star:nth-child(2)::before,
+.star:nth-child(2)::after {
+  animation-delay: 150ms;
+}
+.star:nth-child(3) {
+  top: calc(50% - 25px);
+  left: calc(50% - 200px);
+  animation-delay: 1600ms;
+}
+.star:nth-child(3)::before,
+.star:nth-child(3)::after {
+  animation-delay: 1600ms;
+}
+.star:nth-child(4) {
+  top: calc(50% - -100px);
+  left: calc(50% - 250px);
+  animation-delay: 4700ms;
+}
+.star:nth-child(4)::before,
+.star:nth-child(4)::after {
+  animation-delay: 4700ms;
+}
+.star:nth-child(5) {
+  top: calc(50% - -175px);
+  left: calc(50% - 250px);
+  animation-delay: 6100ms;
+}
+.star:nth-child(5)::before,
+.star:nth-child(5)::after {
+  animation-delay: 6100ms;
+}
+
+/* // Static Star */
+
+.star-light:nth-child(1) {
+  /* // background: linear-gradient(45deg, rgba(0,0,255,0), #699bff,#e4e7ee,#699bff, rgba(71, 71, 228, 0)); */
+  height: 2px;
+  width: 25px;
+  position: absolute;
+  top: calc(5%);
+  left: 25%;
+  border-radius: 100%;
+  transform: translateX(-50%) rotateZ(0deg);
+  animation: glance 2000ms ease-in-out infinite;
+}
+
+.star-light:nth-child(2) {
+  height: 2px;
+  width: 25px;
+  position: absolute;
+  top: calc(10%);
+  left: 45%;
+  border-radius: 100%;
+  transform: translateX(-50%) rotateZ(0deg);
+  animation: glance 2000ms ease-in-out infinite;
+}
+.star-light:nth-child(3) {
+  height: 2px;
+  width: 25px;
+  position: absolute;
+  top: calc(22%);
+  left: 5%;
+  border-radius: 100%;
+  transform: translateX(-50%) rotateZ(0deg);
+  animation: glance 2000ms ease-in-out infinite;
+}
+.star-light:nth-child(4) {
+  height: 2px;
+  width: 25px;
+  position: absolute;
+  top: calc(80%);
+  left: 3%;
+  border-radius: 100%;
+  transform: translateX(-50%) rotateZ(0deg);
+  animation: glance 2000ms ease-in-out infinite;
+}
+.star-light:nth-child(5) {
+  height: 2px;
+  width: 25px;
+  position: absolute;
+  top: calc(15%);
+  left: 60%;
+  border-radius: 100%;
+  transform: translateX(-50%) rotateZ(0deg);
+  animation: glance 2000ms ease-in-out infinite;
+}
+.star-light:nth-child(6) {
+  height: 2px;
+  width: 25px;
+  position: absolute;
+  top: calc(20%);
+  left: 80%;
+  border-radius: 100%;
+  transform: translateX(-50%) rotateZ(0deg);
+  animation: glance 2000ms ease-in-out infinite;
+}
+.star-light:nth-child(7) {
+  height: 2px;
+  width: 25px;
+  position: absolute;
+  top: calc(70%);
+  left: 90%;
+  border-radius: 100%;
+  transform: translateX(-50%) rotateZ(0deg);
+  animation: glance 2000ms ease-in-out infinite;
+}
+.star-light:nth-child(8) {
+  height: 2px;
+  width: 25px;
+  position: absolute;
+  top: calc(40%);
+  left: 95%;
+  border-radius: 100%;
+  transform: translateX(-50%) rotateZ(0deg);
+  animation: glance 2000ms ease-in-out infinite;
+}
+
+.star-light::after {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 255, 0),
+    #699bff,
+    #e4e7ee,
+    #699bff,
+    rgba(71, 71, 228, 0)
+  );
+  content: "";
+  height: 2px;
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0%;
+  border-radius: 100%;
+  transform: translateX(0%) rotateZ(90deg);
+  animation: glance 2000ms ease-in-out infinite;
+}
+@keyframes glance {
+  0% {
+    background: linear-gradient(
+      45deg,
+      rgba(0, 0, 255, 0),
+      #699bff,
+      #e4e7ee,
+      #699bff,
+      rgba(71, 71, 228, 0)
+    );
+    filter: drop-shadow(0 0 6px #699bff);
+    width: 10px;
+  }
+  30% {
+    filter: drop-shadow(0 0 12px #dbe8ff);
+    background: linear-gradient(
+      45deg,
+      rgba(208, 208, 255, 0.151),
+      #9dbdff,
+      #ffffff,
+      #9dbdff,
+      rgba(208, 208, 255, 0.151)
+    );
+    width: 15px;
+  }
+  100% {
+    background: linear-gradient(
+      45deg,
+      rgba(0, 0, 255, 0),
+      #699bff,
+      #e4e7ee,
+      #699bff,
+      rgba(71, 71, 228, 0)
+    );
+    filter: drop-shadow(0 0 6px #699bff);
+    width: 10px;
+  }
+}
