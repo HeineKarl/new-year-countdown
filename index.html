@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fireworks</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="year">
-        <h1 class="new-year">2023</h1>
-    </div>
-    <div class="countdown">
-        <div class="day"></div>
-        <div class="hour"></div>
-        <div class="minute"></div>
-        <div class="second"></div>
-    </div>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <!-- <center> -->
+        <div class="year">
+          <h1 class="new-year">2023</h1>
+        </div>
+    <!-- </center> -->
+        <div class="countdown">
+          <div class="day">
+            <div class="day-value value"></div>
+            <div class="day-unit unit"></div>
+          </div>
+          <div class="hour">
+            <div class="hour-value value"></div>
+            <div class="hour-unit unit"></div>
+          </div>
+          <div class="minute">
+            <div class="minute-value value"></div>
+            <div class="minute-unit unit"></div>
+          </div>
+          <div class="second">
+            <div class="second-value value"></div>
+            <div class="second-unit unit"></div>
+          </div>
+        </div>
     <div class="fire">
         <div class="explosion"></div>
         <div class="explosion"></div>
@@ -183,6 +198,5 @@
         <div class="explosion"></div>
         <div class="explosion"></div>
     </div>
-    <script src="./app.js"></script>
-</body>
+  </body>
 </html>
