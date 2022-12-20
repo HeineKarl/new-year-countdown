@@ -5,16 +5,42 @@
 }
 
 body {
-  /* margin: 0;
-  padding: 0; */
-  background: linear-gradient(125deg, #1e0230, #090c44, #2c2f69);
+  /* background: linear-gradient(125deg, #1e0230, #090c44, #2c2f69); */
+  /* background: linear-gradient(125deg, #022430, #093444, #2c4f69); */
   background-repeat: no-repeat;
   height: 100vh;
-  /* width: 100vw; */
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Poppins";
+  /* overflow: hidden; */
+  /* position: relative; */
+}
+
+select {
+  background: none;
+  outline: 1px white solid;
+  margin: 1rem;
+  color: white;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+/* select * {
+  background: none;
+} */
+
+option {
+  background: transparent;
+  border-radius: 4px;
+  outline: transparent;
+  color: black;
+}
+
+.container {
+  position: relative;
+  /* background: red; */
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 

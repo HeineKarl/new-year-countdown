@@ -1,3 +1,32 @@
+const body = document.querySelector("body");
+const select = document.querySelector("#colors");
+
+// select.selectedIndex()
+select.addEventListener("change", changeColor);
+
+window.addEventListener("load", changeColor);
+
+function changeColor() {
+  const selectedValue = select.value;
+
+  switch (selectedValue) {
+    case "dim red":
+      body.style.background =
+        "linear-gradient(125deg, #300211, #440921, #692c32)";
+      break;
+
+    case "ice green":
+      body.style.background =
+        "linear-gradient(125deg, #022430, #093444, #2c4f69)";
+      break;
+
+    default:
+      body.style.background =
+        "linear-gradient(125deg, #1e0230, #090c44, #2c2f69)";
+      break;
+  }
+}
+
 function setFireworks() {
   const fireworksEl = document.querySelectorAll(".fire");
   const fireworks = Array.from(fireworksEl);
