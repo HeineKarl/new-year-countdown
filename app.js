@@ -101,7 +101,7 @@ function animationYear() {
 // thisyear();
 
 function pickDate() {
-  const countDate = new Date("Jan 01, 2023 00:00:00").getTime();
+  const countDate = new Date("Jan 01, 2024 00:00:00").getTime();
   // const countDate = new Date(
   //   `Jan 1, ${newYear.textContent} 00:00:00`
   // ).getTime();
